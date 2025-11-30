@@ -2,509 +2,752 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AI Essay & Text Rewriter</title>
+  <title>Free AI Essay Rewriter & Paraphrasing Tool | AI Rewriter Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Free AI essay rewriter and paraphrasing tool. Rewrite paragraphs, improve clarity, and rephrase text instantly. No signup required. Built for students, writers, and professionals."
+  />
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415691935537938"
-     crossorigin="anonymous"></script>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #02081f;
+      --card: #020617;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.12);
+      --border: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --danger: #f97373;
+    }
+
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #02081f 0, #020617 45%, #000 100%);
+      color: var(--text);
       min-height: 100vh;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 50%, #000 100%);
-      color: #e5e7eb;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      flex-direction: column;
     }
 
-    .app {
-      width: 100%;
+    header {
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+      background: radial-gradient(circle at top left, #0b1120 0, #020617 60%);
+    }
+
+    .nav {
       max-width: 960px;
-      background: rgba(15, 23, 42, 0.97);
-      border-radius: 16px;
-      padding: 24px 24px 20px;
-      box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.6),
-        0 0 0 1px rgba(148, 163, 184, 0.1);
-      border: 1px solid rgba(148, 163, 184, 0.2);
-    }
-
-    .app-header {
+      margin: 0 auto;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 18px;
     }
 
-    .title-block h1 {
-      font-size: 1.4rem;
+    .logo {
       font-weight: 700;
-      letter-spacing: 0.02em;
-      color: #e5e7eb;
+      letter-spacing: 0.04em;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .title-block p {
+    .logo-pill {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #bbf7d0, #22c55e 50%, #16a34a 100%);
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.9);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
       font-size: 0.85rem;
-      color: #9ca3af;
-      margin-top: 3px;
+      color: var(--muted);
     }
 
-    .badge {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 22px 16px 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-heading {
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(52, 211, 153, 0.5);
-      color: #6ee7b7;
-      background: rgba(22, 163, 74, 0.1);
-      white-space: nowrap;
+      font-size: 0.75rem;
+      background: var(--accent-soft);
+      color: #bbf7d0;
+      margin-bottom: 8px;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-keywords {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 3px 8px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.7rem;
+      color: #cbd5f5;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+      padding: 14px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .card-subtitle {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+    }
+
+    .tool-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 780px) {
+      .tool-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      border-radius: 10px;
+      border: 1px solid #111827;
+      background: radial-gradient(circle at top left, #020617 0, #020617 40%, #000 100%);
+      color: var(--text);
+      font-family: system-ui, sans-serif;
+      font-size: 0.9rem;
+      padding: 10px;
+      resize: vertical;
+    }
+
+    textarea::placeholder {
+      color: #4b5563;
+    }
+
+    .output-box {
+      width: 100%;
+      min-height: 180px;
+      border-radius: 10px;
+      border: 1px dashed #1f2937;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 10px;
+      font-size: 0.9rem;
+      color: var(--text);
+      white-space: pre-wrap;
+    }
+
+    .output-placeholder {
+      color: #4b5563;
+      font-size: 0.85rem;
     }
 
     .controls-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .control-group {
-      flex: 1;
-      min-width: 180px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    label {
-      font-size: 0.78rem;
-      color: #9ca3af;
-    }
-
-    select,
-    input[type="range"] {
-      width: 100%;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(55, 65, 81, 1);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
-      font-size: 0.85rem;
-      outline: none;
-    }
-
-    select:focus,
-    input[type="range"]:focus {
-      border-color: #22c55e;
-      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3);
-    }
-
-    .range-row {
-      display: flex;
-      align-items: center;
       gap: 8px;
-    }
-
-    .range-value {
-      font-size: 0.8rem;
-      color: #cbd5f5;
-      min-width: 30px;
-      text-align: right;
-    }
-
-    .panes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-bottom: 10px;
-    }
-
-    .pane {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .pane-title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: #9ca3af;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 220px;
-      border-radius: 12px;
-      border: 1px solid rgba(55, 65, 81, 1);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
-      padding: 10px 11px;
-      font-size: 0.9rem;
-      resize: vertical;
-      outline: none;
-      line-height: 1.4;
-    }
-
-    textarea:focus {
-      border-color: #22c55e;
-      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.2);
-    }
-
-    .counter {
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-
-    .buttons-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin-top: 8px;
-      gap: 10px;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .left-buttons,
-    .right-buttons {
+    .button-row {
       display: flex;
-      gap: 8px;
       flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
     }
 
     button {
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 0.85rem;
-      padding: 7px 14px;
       border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 7px 14px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #022c22;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(31, 41, 55, 0.9);
-      color: #e5e7eb;
-      border: 1px solid rgba(55, 65, 81, 1);
-      transition: background 0.15s ease, transform 0.05s ease, box-shadow 0.15s ease;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
     }
 
-    button span.icon {
-      font-size: 0.9rem;
-    }
-
-    button.primary {
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #022c22;
-      border-color: rgba(74, 222, 128, 0.8);
-      font-weight: 600;
-      box-shadow: 0 10px 20px rgba(34, 197, 94, 0.35);
-    }
-
-    button.primary:disabled {
-      opacity: 0.6;
+    button:disabled {
+      opacity: 0.5;
       cursor: default;
       box-shadow: none;
     }
 
-    button:hover:not(:disabled) {
-      background: rgba(55, 65, 81, 1);
-      transform: translateY(-1px);
-    }
-
-    button.primary:hover:not(:disabled) {
-      background: linear-gradient(135deg, #4ade80, #22c55e);
-      box-shadow: 0 14px 30px rgba(34, 197, 94, 0.45);
-    }
-
-    button:active:not(:disabled) {
-      transform: translateY(0);
+    button.secondary {
+      background: transparent;
+      color: var(--muted);
+      border-color: #1f2937;
       box-shadow: none;
     }
 
-    .status {
-      font-size: 0.78rem;
-      color: #9ca3af;
-      min-height: 1.2em;
+    .status-text {
+      font-size: 0.8rem;
+      color: var(--muted);
     }
 
-    .status.error {
-      color: #f97373;
+    .status-text.error {
+      color: var(--danger);
     }
 
-    .status.success {
-      color: #22c55e;
+    .section {
+      margin-top: 28px;
+      border-radius: 16px;
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.9)
+      );
+      padding: 16px 14px 14px;
     }
 
-    .footer {
+    .section h2 {
+      font-size: 1.05rem;
+      margin: 0 0 6px;
+    }
+
+    .section p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 4px 0;
+    }
+
+    .section ul {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 18px;
+      margin: 6px 0;
+    }
+
+    .section li {
+      margin-bottom: 3px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 780px) {
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .faq-item + .faq-item {
       margin-top: 8px;
-      font-size: 0.75rem;
-      color: #6b7280;
+    }
+
+    .faq-q {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .faq-a {
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .badge-soft {
+      display: inline-flex;
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(30, 64, 175, 0.2);
+      color: #bfdbfe;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      background: #020617;
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 16px 16px;
+      font-size: 0.78rem;
+      color: var(--muted);
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       gap: 8px;
-      flex-wrap: wrap;
     }
 
-    .footer a {
-      color: #22c55e;
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
       text-decoration: none;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 800px) {
-      .panes {
-        grid-template-columns: 1fr;
-      }
-
-      .app {
-        padding: 18px 14px 14px;
-      }
+    .footer-links a:hover {
+      color: var(--accent);
     }
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8G059K38B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z8G059K38B');
-</script>
 <body>
-  <div class="app">
-    <header class="app-header">
-      <div class="title-block">
-        <h1>AI Essay & Text Rewriter</h1>
-        <p>Rewrite, shorten, expand, or clean up your writing in one click.</p>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <span class="logo-pill"></span>
+        <span>AI Rewriter Lab</span>
       </div>
-      <div class="badge">Powered by AI</div>
-    </header>
-
-    <section class="controls-row">
-      <div class="control-group">
-        <label for="mode">Mode</label>
-        <select id="mode">
-          <option value="rewrite" selected>Smart Rewrite</option>
-          <option value="shorten">Summarize / Shorten</option>
-          <option value="expand">Expand & Add Detail</option>
-          <option value="fix">Fix Grammar & Clarity</option>
-        </select>
+      <div class="nav-links">
+        <a href="#">Tool</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
       </div>
+    </div>
+  </header>
 
-      <div class="control-group">
-        <label for="tone">Tone</label>
-        <select id="tone">
-          <option value="neutral" selected>Neutral</option>
-          <option value="simple">Simpler / Easier</option>
-          <option value="formal">Formal / Academic</option>
-          <option value="creative">Creative / Engaging</option>
-        </select>
-      </div>
-
-      <div class="control-group">
-        <label for="strength">Rewrite Strength</label>
-        <div class="range-row">
-          <input type="range" id="strength" min="0.1" max="0.9" step="0.1" value="0.7" />
-          <span class="range-value" id="strengthValue">0.7</span>
+  <main>
+    <div class="page">
+      <section class="hero">
+        <div>
+          <div class="hero-badge">
+            <span>● Live</span>
+            <span>Free AI Essay Rewriter</span>
+          </div>
+          <h1 class="hero-heading">
+            Rewrite essays and paragraphs with AI — in seconds.
+          </h1>
+          <p class="hero-sub">
+            Paste your text, click once, and let the AI rephrase it for clarity and flow.
+            Built for students, writers, and busy professionals who need clean, readable text fast.
+          </p>
+          <p class="hero-keywords">
+            Keywords: free essay rewriter, AI paraphrasing tool, rewrite my essay, AI text rewriter, paragraph rephrasing.
+          </p>
+          <div class="pill-row">
+            <span class="pill">No signup required</span>
+            <span class="pill">Free to use</span>
+            <span class="pill">AI-powered rewriting</span>
+            <span class="pill">Essay &amp; paragraph rephrasing</span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="panes">
-      <div class="pane">
-        <div class="pane-title">
-          <span>Original text</span>
-          <span class="counter" id="inputCounter">0 words • 0 chars</span>
+        <!-- TOOL CARD -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">AI Essay &amp; Paragraph Rewriter</div>
+              <div class="card-subtitle">
+                Paste your text on the left, get a rewritten version on the right.
+              </div>
+            </div>
+            <div class="status-dot" title="Online"></div>
+          </div>
+
+          <div class="tool-layout">
+            <div>
+              <label for="inputText">
+                Original text
+                <span>Best with 1–3 paragraphs</span>
+              </label>
+              <textarea
+                id="inputText"
+                placeholder="Paste an essay paragraph, email, or explanation you’d like to rewrite more clearly..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="outputText">
+                Rewritten text
+                <span id="copyStatus"></span>
+              </label>
+              <div id="outputText" class="output-box">
+                <div class="output-placeholder">
+                  Your rewritten text will appear here. You can copy, edit, or refine it further.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="controls-row">
+            <div class="button-row">
+              <button id="rewriteBtn">
+                ⚡ Rewrite with AI
+              </button>
+              <button id="copyBtn" class="secondary">
+                Copy output
+              </button>
+            </div>
+            <div id="status" class="status-text">
+              Ready. Paste your text and click “Rewrite”.
+            </div>
+          </div>
         </div>
-        <textarea id="inputText" placeholder="Paste your essay, paragraph, or notes here..."></textarea>
-      </div>
-      <div class="pane">
-        <div class="pane-title">
-          <span>AI rewrite</span>
-          <span class="counter" id="outputCounter">0 words • 0 chars</span>
+      </section>
+
+      <!-- HOW IT WORKS / FEATURES -->
+      <section class="section" id="how-it-works">
+        <h2>How this free AI rewriter works</h2>
+        <div class="grid-2">
+          <div>
+            <p>
+              This tool uses an AI language model to rewrite your text while keeping
+              the original meaning. It is especially useful for:
+            </p>
+            <ul>
+              <li>Improving clarity and readability of paragraphs</li>
+              <li>Rephrasing repetitive or awkward sentences</li>
+              <li>Adjusting tone to be more formal or neutral</li>
+              <li>Cleaning up emails, explanations, and simple essays</li>
+            </ul>
+          </div>
+          <div>
+            <p><strong>How to use it effectively:</strong></p>
+            <ul>
+              <li>Paste 1–3 paragraphs at a time for best results</li>
+              <li>Click “Rewrite with AI” and review the output</li>
+              <li>Edit the result to fit your voice and context</li>
+              <li>Use the copy button to quickly move the text elsewhere</li>
+            </ul>
+          </div>
         </div>
-        <textarea id="outputText" placeholder="Your rewritten text will appear here..." readonly></textarea>
-      </div>
-    </section>
+      </section>
 
-    <section class="buttons-row">
-      <div class="left-buttons">
-        <button class="primary" id="rewriteBtn">
-          <span class="icon">⚡</span>
-          <span>Rewrite with AI</span>
-        </button>
-        <button id="clearBtn">
-          <span class="icon">🧹</span>
-          <span>Clear</span>
-        </button>
-      </div>
-      <div class="right-buttons">
-        <button id="copyBtn">
-          <span class="icon">📋</span>
-          <span>Copy Output</span>
-        </button>
-      </div>
-    </section>
+      <!-- ACADEMIC INTEGRITY / RESPONSIBLE USE -->
+      <section class="section">
+        <span class="badge-soft">Academic integrity</span>
+        <h2>Use this tool responsibly</h2>
+        <p>
+          This AI rewriter is designed to help you improve your writing, not to replace your own work.
+          Always follow your school, university, or workplace guidelines.
+        </p>
+        <ul>
+          <li>Do not submit AI-generated text as original work where it is not allowed.</li>
+          <li>Use the tool to clarify ideas, improve structure, or learn new ways to phrase sentences.</li>
+          <li>Always proofread and make sure the final version accurately reflects what you want to say.</li>
+        </ul>
+      </section>
 
-    <div class="status" id="status"></div>
+      <!-- FAQ / EXTRA CONTENT -->
+      <section class="section" id="faq">
+        <h2>Frequently asked questions</h2>
+        <div class="grid-2">
+          <div>
+            <div class="faq-item">
+              <div class="faq-q">Is this essay rewriter free?</div>
+              <div class="faq-a">
+                Yes. You can use this AI text rewriter for free. In the future,
+                there may be optional premium features, but the core rewriting tool
+                is intended to remain accessible.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Do I need to create an account?</div>
+              <div class="faq-a">
+                No account or login is required. Just paste your text and click
+                “Rewrite with AI”.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="faq-item">
+              <div class="faq-q">Is this plagiarism safe?</div>
+              <div class="faq-a">
+                This tool rephrases text, but it is still your responsibility to
+                follow academic policies. When in doubt, cite your sources and
+                treat this as a writing assistant, not a shortcut.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Can I use it for work emails or documents?</div>
+              <div class="faq-a">
+                Yes. Many people use AI rewriters to clean up emails, reports,
+                documentation, and explanations to make them clearer and more
+                professional.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <footer class="footer">
-      <span>Free daily rewrites. Heavy use may require a paid plan.</span>
-      <span>Built by <a href="#" target="_blank">Daniel</a></span>
-    </footer>
-  </div>
+      <!-- PRIVACY POLICY -->
+      <section class="section" id="privacy">
+        <h2>Privacy policy</h2>
+        <p>
+          This site is a simple AI-powered text rewriting tool. We aim to keep the
+          experience lightweight and privacy-conscious.
+        </p>
+        <ul>
+          <li>
+            Text you paste is sent to our server and then to an AI provider solely
+            for the purpose of generating a rewritten version.
+          </li>
+          <li>
+            We do not intentionally store your original text or rewritten text
+            long-term, except for short-lived logs needed to keep the service
+            running and prevent abuse.
+          </li>
+          <li>
+            Third-party services such as analytics or advertising platforms (like
+            Google AdSense) may use cookies or similar technologies to deliver and
+            measure ads.
+          </li>
+          <li>
+            Do not paste highly sensitive personal information, passwords, or
+            confidential data into the tool.
+          </li>
+        </ul>
+        <p>
+          By using this site, you agree that your input text may be processed by
+          AI services to provide the rewriting functionality.
+        </p>
+      </section>
+
+      <!-- TERMS OF USE -->
+      <section class="section" id="terms">
+        <h2>Terms of use</h2>
+        <p>
+          By accessing and using this AI rewriter tool, you agree to the following:
+        </p>
+        <ul>
+          <li>
+            You are responsible for how you use the rewritten text and for
+            complying with any rules set by your school, employer, or other
+            institution.
+          </li>
+          <li>
+            The tool is provided “as is” with no guarantee of accuracy, originality,
+            or suitability for a particular purpose.
+          </li>
+          <li>
+            We are not liable for any consequences arising from misuse of the
+            tool, including academic or professional penalties.
+          </li>
+          <li>
+            You will not use this tool to generate harmful, illegal, or abusive
+            content.
+          </li>
+        </ul>
+        <p>
+          These terms may be updated from time to time. Continued use of the site
+          after changes are posted means you accept the updated terms.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> AI Rewriter Lab. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#privacy">Privacy policy</a>
+        <a href="#terms">Terms of use</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    const inputText = document.getElementById("inputText");
-    const outputText = document.getElementById("outputText");
-    const inputCounter = document.getElementById("inputCounter");
-    const outputCounter = document.getElementById("outputCounter");
-    const rewriteBtn = document.getElementById("rewriteBtn");
-    const clearBtn = document.getElementById("clearBtn");
-    const copyBtn = document.getElementById("copyBtn");
-    const modeSelect = document.getElementById("mode");
-    const toneSelect = document.getElementById("tone");
-    const strengthInput = document.getElementById("strength");
-    const strengthValue = document.getElementById("strengthValue");
+    // Year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const input = document.getElementById("inputText");
+    const output = document.getElementById("outputText");
     const statusEl = document.getElementById("status");
+    const rewriteBtn = document.getElementById("rewriteBtn");
+    const copyBtn = document.getElementById("copyBtn");
+    const copyStatus = document.getElementById("copyStatus");
 
-    function updateCounter(el, counterEl) {
-      const text = el.value.trim();
-      const words = text ? text.split(/\s+/).length : 0;
-      const chars = text.length;
-      counterEl.textContent = `${words} words • ${chars} chars`;
+    function setStatus(text, isError = false) {
+      statusEl.textContent = text;
+      statusEl.classList.toggle("error", isError);
     }
 
-    inputText.addEventListener("input", () => updateCounter(inputText, inputCounter));
-    outputText.addEventListener("input", () => updateCounter(outputText, outputCounter));
-
-    strengthInput.addEventListener("input", () => {
-      strengthValue.textContent = Number(strengthInput.value).toFixed(1);
-    });
-
-async function rewriteText() {
-  const text = inputText.value.trim();
-  if (!text) {
-    statusEl.textContent = "Paste or type some text first.";
-    statusEl.className = "status error";
-    return;
-  }
-
-  rewriteBtn.disabled = true;
-  rewriteBtn.innerHTML = '<span class="icon">⏳</span><span>Rewriting...</span>';
-  statusEl.textContent = "Contacting AI server...";
-  statusEl.className = "status";
-
-  try {
-    const response = await fetch("https://ai-rewriter-backend.onrender.com/api/rewrite", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        text,
-        mode: modeSelect.value,
-        tone: toneSelect.value,
-        strength: Number(strengthInput.value)
-      })
-    });
-
-    const rawText = await response.text();
-
-    if (!response.ok) {
-      console.error("Server error:", response.status, rawText);
-      statusEl.textContent = `Server error ${response.status}: ${rawText}`;
-      statusEl.className = "status error";
-      return;
+    function setOutput(text) {
+      output.innerHTML = "";
+      const div = document.createElement("div");
+      div.textContent = text;
+      output.appendChild(div);
     }
 
-    let data;
-    try {
-      data = JSON.parse(rawText);
-    } catch (e) {
-      console.error("JSON parse error:", e, rawText);
-      statusEl.textContent = "Could not parse server response.";
-      statusEl.className = "status error";
-      return;
-    }
+    // IMPORTANT: your Render backend URL
+    const API_URL = "https://ai-rewriter-backend.onrender.com/api/rewrite";
 
-    if (!data || !data.rewrittenText) {
-      console.error("Bad data format:", data);
-      statusEl.textContent = "Server responded but did not send rewrittenText.";
-      statusEl.className = "status error";
-      return;
-    }
-
-    outputText.value = data.rewrittenText;
-    updateCounter(outputText, outputCounter);
-    statusEl.textContent = "Done ✔";
-    statusEl.className = "status success";
-  } catch (err) {
-    console.error("Network or JS error:", err);
-    statusEl.textContent = "Network or JavaScript error. See console for details.";
-    statusEl.className = "status error";
-  } finally {
-    rewriteBtn.disabled = false;
-    rewriteBtn.innerHTML = '<span class="icon">⚡</span><span>Rewrite with AI</span>';
-  }
-}
-
-    async function copyOutput() {
-      const text = outputText.value.trim();
+    async function rewriteText() {
+      const text = input.value.trim();
       if (!text) {
-        statusEl.textContent = "Nothing to copy yet.";
-        statusEl.className = "status";
+        setStatus("Please paste some text first.", true);
         return;
       }
 
+      rewriteBtn.disabled = true;
+      setStatus("Rewriting with AI...");
+
       try {
-        await navigator.clipboard.writeText(text);
-        statusEl.textContent = "Copied to clipboard.";
-        statusEl.className = "status success";
-      } catch {
-        statusEl.textContent = "Could not copy. Select text and copy manually.";
-        statusEl.className = "status error";
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            text,
+            mode: "rewrite",
+            tone: "neutral",
+            strength: 0.7
+          })
+        });
+
+        if (!res.ok) {
+          const errText = await res.text();
+          console.error("Server error:", errText);
+          throw new Error("Server returned " + res.status);
+        }
+
+        const data = await res.json();
+        const rewritten = data.rewrittenText;
+
+        if (!rewritten) {
+          throw new Error("No rewrittenText in response.");
+        }
+
+        setOutput(rewritten);
+        setStatus("Done. Review and edit the rewritten text.");
+      } catch (err) {
+        console.error(err);
+        setStatus(
+          "Something went wrong while rewriting. Please try again.",
+          true
+        );
+      } finally {
+        rewriteBtn.disabled = false;
       }
     }
 
-    function clearAll() {
-      inputText.value = "";
-      outputText.value = "";
-      updateCounter(inputText, inputCounter);
-      updateCounter(outputText, outputCounter);
-      statusEl.textContent = "";
-      statusEl.className = "status";
+    async function copyOutput() {
+      const text = output.innerText.trim();
+      if (!text) return;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        copyStatus.textContent = "Copied!";
+        setTimeout(() => (copyStatus.textContent = ""), 1500);
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     rewriteBtn.addEventListener("click", rewriteText);
-    clearBtn.addEventListener("click", clearAll);
     copyBtn.addEventListener("click", copyOutput);
-
-    // Initialize counters
-    updateCounter(inputText, inputCounter);
-    updateCounter(outputText, outputCounter);
   </script>
 </body>
 </html>
-
-<p style="text-align:center;">
-  <a href="privacy.html">Privacy Policy</a>
-</p>
-
-
-
